@@ -1,9 +1,8 @@
 package com.example.pizzaria2.model;
 
-import com.example.pizzaria2.repository.ClienteRequestDTO;
+import com.example.pizzaria2.repository.ClienteDTO;
 import jakarta.persistence.*;
 import lombok.*;
-
 @Getter
 @Data
 @NoArgsConstructor
@@ -11,7 +10,7 @@ import lombok.*;
 @EqualsAndHashCode(of = "id")
 @Table(name = "cliente")
 @Entity(name = "cliente")
-public class ClienteModel {
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,7 +20,8 @@ public class ClienteModel {
     private String rua;
     private String complemento;
 
-    public ClienteModel(ClienteRequestDTO data){
+    public Cliente(ClienteDTO data){
+        this.id = data.id();
         this.nome = data.nome();
         this.bairro = data.bairro();
         this.cep = data.cep();
