@@ -3,5 +3,5 @@ CREATE TABLE cardapio(
   nome TEXT NOT NULL,
   descricao TEXT NOT NULL,
   url TEXT NOT NULL,
-  valor DOUBLE NOT NULL
+  valor FLOAT NOT NULL
 );
