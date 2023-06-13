@@ -1,0 +1,6 @@
+CREATE TABLE pedido(
+  id SERIAL PRIMARY KEY,
+  nome TEXT NOT NULL,
+  descricao TEXT NOT NULL,
+  total FLOAT NOT NULL
+);
