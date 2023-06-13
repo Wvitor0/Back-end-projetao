@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("cardapio")
+@RequestMapping("pedido")
 @CrossOrigin(origins = "http://localhost:3000")
-public class CardapioController {
+public class PedidoController {
     @Autowired
     private PedidoRepository repository;
     @PostMapping
@@ -21,8 +21,8 @@ public class CardapioController {
     }
     @GetMapping
     public List<PedidoDTO> getAll(){
-        List<PedidoDTO> listCardapio = repository.findAll().stream().map(PedidoDTO::new).toList();
-        return listCardapio;
+        List<PedidoDTO> listPedido = repository.findAll().stream().map(PedidoDTO::new).toList();
+        return listPedido;
     }
     @DeleteMapping("/{id}")
     public void deleteCliente(@PathVariable Long id){
